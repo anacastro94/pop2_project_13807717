@@ -61,6 +61,10 @@ class FractionImplTest {
 
     @org.junit.jupiter.api.Test
     void multiply() {
+        Fraction f1 = new FractionImpl(12, 8);
+        Fraction f2 = new FractionImpl(8, 12);
+        Fraction fResult = f1.multiply(f2);
+        assertEquals(new FractionImpl(1), fResult);
     }
 
     @org.junit.jupiter.api.Test
@@ -76,7 +80,16 @@ class FractionImplTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testEquals() {
+    void testEquals1() {
+        Fraction f1 = new FractionImpl(12, 8);
+        Fraction f2 = new FractionImpl(8, 12);
+        assertFalse(f1.equals(f2));
+    }
+
+    @org.junit.jupiter.api.Test
+    void testEquals2() {
+        Fraction f = new FractionImpl(8, 12);
+        assertTrue(f.equals(new FractionImpl("2/3")));
     }
 
     @org.junit.jupiter.api.Test
