@@ -82,11 +82,18 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * Returns a new <pre>Fraction</pre> that is the <em>sum</em> of <pre>this</pre> and the parameter:
+     * <pre>a/b + c/d</pre> is <pre>(ad + bc)/bd</pre>
+     *
+     * @param f the fraction to add to the current fraction
+     * @return the result of the addition
      */
     @Override
     public Fraction add(Fraction f) {
-        return null;
+        FractionImpl fCopy = (FractionImpl) f;
+        int n = (numerator * fCopy.denominator + denominator * fCopy.numerator);
+        int d = denominator * fCopy.denominator;
+        return new FractionImpl(n, d);
     }
 
     /**
