@@ -112,11 +112,18 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * Returns a new <pre>Fraction</pre> that is the <em>product</em> of <pre>this</pre> and the parameter
+     * <pre>(a/b) * (c/d)</pre> is <pre>(a*c)/(b*d)</pre>
+     *
+     * @param f the fraction to multiply with the current fraction
+     * @return the result of the multiplication
      */
     @Override
     public Fraction multiply(Fraction f) {
-        return null;
+        FractionImpl fCopy = (FractionImpl) f;
+        int n = numerator * fCopy.numerator;
+        int d = denominator * fCopy.denominator;
+        return new FractionImpl(n, d);
     }
 
     /**
@@ -152,11 +159,22 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * Returns <pre>true</pre> if <pre>obj</pre> is a <pre>Fraction</pre> equal to <pre>this</pre>,
+     * and <pre>false</pre> in all other cases.
+     *
+     * @param obj the object to compare this one to
+     * @return whether the true fractions are equal
      */
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (obj instanceof Fraction) {
+            FractionImpl fCopy = new FractionImpl(obj.toString());
+            // Two fractions in the reduced form are equal when their numerators and denominators are equal
+            if (numerator == fCopy.numerator && denominator == fCopy.denominator) return true;
+            else return false;
+        } else {
+            return false;
+        }
     }
 
     /**
