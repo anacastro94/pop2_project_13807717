@@ -97,11 +97,18 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * Returns a new <pre>Fraction</pre> that is the <em>difference</em> of <pre>this</pre> minus the parameter
+     * <pre>a/b - c/d</pre> is <pre>(ad - bc)/bd</pre>
+     *
+     * @param f the fraction to subtract from the current fraction
+     * @return the result of the subtraction
      */
     @Override
     public Fraction subtract(Fraction f) {
-        return null;
+        FractionImpl fCopy = (FractionImpl) f;
+        int n = (numerator * fCopy.denominator - denominator * fCopy.numerator);
+        int d = denominator * fCopy.denominator;
+        return new FractionImpl(n, d);
     }
 
     /**
