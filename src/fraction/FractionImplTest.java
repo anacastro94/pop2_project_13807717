@@ -1,0 +1,87 @@
+// 13807717
+// asilva14@student.bbk.ac.uk
+
+package fraction;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class FractionImplTest {
+
+    @org.junit.jupiter.api.Test
+    void firstConstructor() {
+        Fraction f = new FractionImpl(12, -8);
+        assertEquals("-3/2", f.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void firstConstructorArithmeticException() {
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> new FractionImpl(12, 0));
+        assertTrue(exception.getMessage().contains("Division by zero"));
+    }
+
+    @org.junit.jupiter.api.Test
+    void secondConstructor() {
+        Fraction f = new FractionImpl(8);
+        assertEquals("8", f.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void thirdConstructor() {
+        Fraction f = new FractionImpl("16  /-24  ");
+        assertEquals("-2/3", f.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void thirdConstructorArithmeticException() {
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> new FractionImpl("12/0"));
+        assertTrue(exception.getMessage().contains("Division by zero"));
+    }
+
+    @org.junit.jupiter.api.Test
+    void thirdConstructorNumberFormatException() {
+        NumberFormatException exception = assertThrows(NumberFormatException.class, () -> new FractionImpl("AA/BB"));
+        assertTrue(exception.getMessage().contains("For input string: \"AA\""));
+    }
+
+    @org.junit.jupiter.api.Test
+    void add() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void subtract() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void multiply() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void divide() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void abs() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void negate() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void testEquals() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void inverse() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void compareTo() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void testToString() {
+        Fraction f1 = new FractionImpl(12, 8);
+        assertEquals("3/2", f1.toString());
+    }
+}
