@@ -53,6 +53,10 @@ class FractionImplTest {
 
     @org.junit.jupiter.api.Test
     void subtract() {
+        Fraction f1 = new FractionImpl(12, 8);
+        Fraction f2 = new FractionImpl(8, 12);
+        Fraction fResult = f1.subtract(f2);
+        assertEquals(new FractionImpl("5/6"), fResult);
     }
 
     @org.junit.jupiter.api.Test
