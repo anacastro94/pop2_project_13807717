@@ -77,10 +77,16 @@ class FractionImplTest {
 
     @org.junit.jupiter.api.Test
     void abs() {
+        Fraction f = new FractionImpl(-12, 8);
+        Fraction fResult = f.abs();
+        assertEquals(new FractionImpl("3/2"), fResult);
     }
 
     @org.junit.jupiter.api.Test
     void negate() {
+        Fraction f = new FractionImpl(-12, 8);
+        Fraction fResult = f.negate();
+        assertEquals(new FractionImpl("3/2"), fResult);
     }
 
     @org.junit.jupiter.api.Test
@@ -98,6 +104,9 @@ class FractionImplTest {
 
     @org.junit.jupiter.api.Test
     void inverse() {
+        Fraction f = new FractionImpl(-12, 8);
+        Fraction fResult = f.inverse();
+        assertEquals(new FractionImpl("-2/3"), fResult);
     }
 
     @org.junit.jupiter.api.Test
