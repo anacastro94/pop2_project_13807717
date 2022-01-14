@@ -1,3 +1,6 @@
+// 13807717
+// asilva14@student.bbk.ac.uk
+
 package fraction;
 
 /**
@@ -8,7 +11,7 @@ public interface Fraction extends Comparable<Fraction> {
 
     /**
      * Returns a new <pre>Fraction</pre> that is the <em>sum</em> of <pre>this</pre> and the parameter:
-     *  <pre>a/b + c/d</pre> is <pre>(ad + bc)/bd</pre>
+     * <pre>a/b + c/d</pre> is <pre>(ad + bc)/bd</pre>
      *
      * @param f the fraction to add to the current fraction
      * @return the result of the addition
@@ -92,7 +95,7 @@ public interface Fraction extends Comparable<Fraction> {
      * Returns a <pre>String</pre> of the form <pre>n/d</pre>, where <pre>n</pre> is the
      * <em>numerator</em> and <pre>d</pre> is the <em>denominator</em>.
      * However, if <pre>d</pre> is <pre>1</pre>, just return <pre>n</pre> (as a <pre>String</pre>).
-     *
+     * <p>
      * The returned <pre>String</pre> should not contain any blanks.
      * If the fraction represents a negative number, a minus sign should precede <pre>n</pre>
      *
