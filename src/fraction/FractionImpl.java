@@ -127,11 +127,18 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * Returns a new <pre>Fraction</pre> that is the <em>quotient</em> of dividing <pre>this</pre> by the parameter
+     * <pre>(a/b) / (c/d)</pre> is <pre>(a*d)/(b*c)</pre>
+     *
+     * @param f the fraction to take part in the division
+     * @return the result of the division
      */
     @Override
     public Fraction divide(Fraction f) {
-        return null;
+        FractionImpl fCopy = (FractionImpl) f;
+        int n = numerator * fCopy.denominator;
+        int d = denominator * fCopy.numerator;
+        return new FractionImpl(n, d);
     }
 
     /**
