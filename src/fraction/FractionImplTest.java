@@ -110,7 +110,23 @@ class FractionImplTest {
     }
 
     @org.junit.jupiter.api.Test
-    void compareTo() {
+    void compareTo1() {
+        Fraction f1 = new FractionImpl(12, 8);
+        Fraction f2 = new FractionImpl(8, 12);
+        assertTrue(f1.compareTo(f2) > 0);
+    }
+
+    @org.junit.jupiter.api.Test
+    void compareTo2() {
+        Fraction f1 = new FractionImpl(12, 8);
+        Fraction f2 = new FractionImpl(8, 12);
+        assertTrue(f2.compareTo(f1) < 0);
+    }
+
+    @org.junit.jupiter.api.Test
+    void compareTo3() {
+        Fraction f = new FractionImpl(8, 12);
+        assertTrue(f.compareTo(new FractionImpl("2/3")) == 0);
     }
 
     @org.junit.jupiter.api.Test
