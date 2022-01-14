@@ -11,9 +11,6 @@ public class FractionImpl implements Fraction {
      * <pre>-2</pre> and denominator <pre>3</pre>.
      * <p>
      * The constructor should throw an <pre>ArithmeticException</pre> if the denominator is zero.
-     *
-     * @param numerator
-     * @param denominator
      */
 
     private final int numerator;
@@ -182,8 +179,7 @@ public class FractionImpl implements Fraction {
         if (obj instanceof Fraction) {
             FractionImpl fCopy = new FractionImpl(obj.toString());
             // Two fractions in the reduced form are equal when their numerators and denominators are equal
-            if (numerator == fCopy.numerator && denominator == fCopy.denominator) return true;
-            else return false;
+            return numerator == fCopy.numerator && denominator == fCopy.denominator;
         } else {
             return false;
         }
