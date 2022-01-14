@@ -142,19 +142,24 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * Returns a new <pre>Fraction</pre> that is the <em>absolute value</em> of <pre>this</pre> fraction
+     *
+     * @return the absolute value of the fraction as a new fraction
      */
     @Override
     public Fraction abs() {
-        return null;
+        return new FractionImpl(Math.abs(numerator), denominator);
     }
 
     /**
-     * @inheritDoc
+     * Returns a new <pre>Fraction</pre> that has the same numeric value of <pre>this</pre> fraction,
+     * but the opposite sign.
+     *
+     * @return the newly negated fraction
      */
     @Override
     public Fraction negate() {
-        return null;
+        return new FractionImpl(-numerator, denominator);
     }
 
     /**
@@ -193,11 +198,13 @@ public class FractionImpl implements Fraction {
     }
 
     /**
-     * @inheritDoc
+     * The inverse of <pre>a/b</pre> is <pre>b/a</pre>.
+     *
+     * @return the newly inverted fraction
      */
     @Override
     public Fraction inverse() {
-        return null;
+        return new FractionImpl(denominator, numerator);
     }
 
     /**
